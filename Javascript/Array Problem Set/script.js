@@ -5,23 +5,18 @@ function printReverse(array){
   }
 }
 
-//isUniform() function
+//isUniform() function 
 function isUniform(array){
-  var i = 0;
-  while(i<array.length){
-    if(array[i] == array[i + 1]){
-      console.log("true");
-      //i++;
+  var firstElement = array[0];
+  var returnLog = "";
+  for(var i = 0; i<array.length; i++){
+    if(firstElement != array[i]){
+      returnLog = "False";
     }else{
-      console.log("false");
-      //i++;
+      returnLog = "True";
     }
-      if(i == array.length - 1 && array[i -1] == array[i]){
-      console.log("true");
-      break;
-    }
-    i++;
   }
+  console.log(returnLog);
 }
 
 //sumArray() function
@@ -31,4 +26,21 @@ function sumArray(array){
     result = result + array[i];
   }
   console.log(result);
+}
+
+//max() function
+function max(array){
+  var max = 0;
+  for(var i = 0; i<array.length; i++){
+    if(i<array.length-1){
+      if(array[i]>array[i+1] && array[i]>max){
+        max = array[i];
+      }
+    }else{
+      if(array[i] > max){
+        max = array[i];
+      }
+    }
+  }
+  console.log(max);
 }
