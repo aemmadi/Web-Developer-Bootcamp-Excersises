@@ -5,7 +5,7 @@ function printReverse(array){
   }
 }
 
-//isUniform() function 
+//isUniform() function
 function isUniform(array){
   var firstElement = array[0];
   var returnLog = "";
