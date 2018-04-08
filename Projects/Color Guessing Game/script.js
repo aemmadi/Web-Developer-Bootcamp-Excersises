@@ -18,11 +18,11 @@ colorDisplay.textContent = correctColor;
 for(var i = 0; i < squares.length; i++){
   squares[i].style.backgroundColor = colors[i]; //setting colors to squares
   squares[i].addEventListener("click", function(){
-    var clickedColor = this.style.background; //grabbing the color of the selected square
+    var clickedColor = this.style.backgroundColor; //grabbing the color of the selected square
     if(clickedColor === correctColor){ //comparing with answer
       alert("CORRECT");
     }else{
-      this.style.background = "#232323";
+      this.style.backgroundColor = "#232323";
     }
   });
 }
