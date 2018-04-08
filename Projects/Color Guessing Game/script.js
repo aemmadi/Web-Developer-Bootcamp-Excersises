@@ -6,6 +6,7 @@ var squares = document.querySelectorAll(".square");
 var colorDisplay = document.querySelector("#colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var correctColor = randomPickColor();
+var h1 = document.querySelector("h1");
 
 colorDisplay.textContent = correctColor;
 
@@ -16,6 +17,7 @@ for(var i = 0; i < squares.length; i++){
     if(clickedColor === correctColor){ //comparing with answer
       messageDisplay.textContent = "Correct";
       changeColor(correctColor);
+      h1.style.backgroundColor = correctColor;
     }else{
       this.style.backgroundColor = "#232323"; //vanishing the square if its wrong
       messageDisplay.textContent = "Try Again";
@@ -37,7 +39,14 @@ function randomPickColor(){
 function randomColorArray(num){
   var colorArray = [];
   for (var i = 0; i < num; i++) {
-
+    colorArray.push(randomColor());
   }
   return colorArray;
+}
+
+function randomColor(){
+  var red = Math.floor(Math.random() * 256);
+  var green = Math.floor(Math.random() * 256);
+  var blue = Math.floor(Math.random() * 256);
+  return "rgb(" + red + "," + " " + green + "," + " " + blue + ")";
 }
